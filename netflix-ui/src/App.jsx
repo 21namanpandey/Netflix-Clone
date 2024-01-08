@@ -6,8 +6,9 @@ import Netflix from './pages/Netflix';
 
 
 const App = () => {
+  
   return (
-    
+
     <BrowserRouter>
       <Routes>
         <Route exact path="/login" element={<Login/>} />

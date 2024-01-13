@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import logo from "../assets/logo.png"
 import { Link, useNavigate } from 'react-router-dom'
 import { FaPowerOff, FaSearch } from "react-icons/fa"
-import { signOut ,  onAuthStateChanged } from 'firebase/auth'
+import { signOut, onAuthStateChanged } from 'firebase/auth'
 import { firebaseAuth } from '../utils/firebase-config'
 
 const Navbar = ({ isScrolled }) => {
@@ -48,13 +48,16 @@ const Navbar = ({ isScrolled }) => {
                         }}>
                             <FaSearch />
                         </button>
-                        <input type="text" placeholder='Search'
+                        <input
+                            type="text"
+                            placeholder="Search"
                             onMouseEnter={() => setInputHover(true)}
-                            onMouseLeave={() => inputHover(false)}
+                            onMouseLeave={() => setInputHover(false)}
                             onBlur={() => {
                                 setShowSearch(false);
                                 setInputHover(false);
-                            }} />
+                            }}
+                        />
                     </div>
                     <button onClick={() => signOut(firebaseAuth)}>
                         <FaPowerOff />

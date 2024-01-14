@@ -35,7 +35,6 @@ const createArrayFromRawData = (array, moviesArray, genres) => {
 };
 
 
-
 const getRawData = async (api, genres, paging) => {
     const moviesArray = [];
     for (let i = 1; moviesArray.length < 60 && i < 10; i++) {

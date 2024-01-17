@@ -51,11 +51,12 @@ module.exports.removeFromLikedMovies = async (req, res) => {
             await User.findByIdAndUpdate(
                 user._id,
                 {
-                    likedMovies: [...user.likedMovies, data],
+                    likedMovies,
                 },
                 { new: true }
             );
 
+            return res.json({msg:"Movie Deleted", movies: likedMovies})
         }
 
     } catch (err) {

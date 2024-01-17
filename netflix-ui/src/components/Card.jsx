@@ -30,8 +30,7 @@ const Card = React.memo(({ movieData, isLiked = false }) => {
     const addToList = async () => {
         try {
             await axios.post("http://127.0.0.1:5000/api/user/add", { email, data: movieData })
-            
-
+        
         } catch (error) {
             console.log(error);
         }
